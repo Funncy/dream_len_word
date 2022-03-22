@@ -17,8 +17,12 @@ class WordCard extends StatelessWidget {
           const BoxConstraints(maxWidth: 450, maxHeight: 1200, minHeight: 550),
       child: Column(
         children: [
+          const SizedBox(
+            height: 20,
+          ),
           Container(
             width: 320,
+            height: 500,
             child: Image.network(path),
           ),
           const SizedBox(
