@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
-import 'package:speech_bubble/speech_bubble.dart';
-
 import '../constants.dart';
 
 class Buttons extends StatefulWidget {

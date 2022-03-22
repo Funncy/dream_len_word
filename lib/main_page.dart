@@ -1,3 +1,4 @@
+import 'package:firebase_analytics_web/firebase_analytics_web.dart';
 import 'package:flutter/material.dart';
 import 'package:lent_word_card/components/fifth_card.dart';
 import 'package:lent_word_card/components/forth_card.dart';
@@ -17,6 +18,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final FirebaseAnalyticsWeb analytics = FirebaseAnalyticsWeb();
   final PageController pageController = PageController(
     initialPage: 0,
   );
@@ -44,6 +46,23 @@ class _MainPageState extends State<MainPage> {
     pageController.jumpTo(0);
   }
 
+  void sendAnalytics(String title, String answer) {
+    analytics.logEvent(
+      name: title + answer,
+      parameters: {"answer": answer},
+    );
+  }
+
+  void senFinalAnalytics() {
+    String first = firstChoose == 0 ? 'Y' : 'N';
+    String seconds = secondsChoose == 0 ? 'Y' : 'N';
+    String third = thirdChoose == 0 ? 'Y' : 'N';
+    String forth = forthChoose == 0 ? 'Y' : 'N';
+    analytics.logEvent(
+      name: "answer = $first$seconds$third$forth",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,27 +83,33 @@ class _MainPageState extends State<MainPage> {
               CardBody(
                 child: SecondsCard(yes: () {
                   firstChoose = 0;
+                  sendAnalytics("요즘 웃을 일이 많으신가요?", "yes");
                   nextPage();
                 }, no: () {
                   firstChoose = 1;
+                  sendAnalytics("요즘 웃을 일이 많으신가요?", "no");
                   nextPage();
                 }),
               ),
               CardBody(
                 child: ThirdCard(yes: () {
                   secondsChoose = 0;
+                  sendAnalytics("기댈수 있는 공동체가 있나요?", "yes");
                   nextPage();
                 }, no: () {
                   secondsChoose = 1;
+                  sendAnalytics("기댈수 있는 공동체가 있나요?", "no");
                   nextPage();
                 }),
               ),
               CardBody(
                 child: ForthCard(yes: () {
                   thirdChoose = 0;
+                  sendAnalytics("영적 무기력함을 느끼시나요?", "yes");
                   nextPage();
                 }, no: () {
                   thirdChoose = 1;
+                  sendAnalytics("영적 무기력함을 느끼시나요?", "no");
                   nextPage();
                 }),
               ),
@@ -92,10 +117,12 @@ class _MainPageState extends State<MainPage> {
                 child: FifthCard(yes: () {
                   forthChoose = 0;
                   nextPage();
+                  sendAnalytics("사순절 예배 꾸준히 참석하고 계신가요?", "yes");
                   setImage();
                 }, no: () {
                   forthChoose = 1;
                   nextPage();
+                  sendAnalytics("사순절 예배 꾸준히 참석하고 계신가요?", "no");
                   setImage();
                 }),
               ),
@@ -103,6 +130,7 @@ class _MainPageState extends State<MainPage> {
                 child: LastCard(
                   callback: () {
                     nextPage();
+                    senFinalAnalytics();
                   },
                 ),
               ),
