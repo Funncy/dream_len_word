@@ -19,7 +19,7 @@ class CardBody extends StatelessWidget {
               children: [
                 Positioned(
                   left: 0,
-                  top: 250,
+                  bottom: 150,
                   child: Container(
                     width: 300,
                     height: 400,
@@ -51,8 +51,8 @@ class CardBody extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: 0,
-                  top: 280,
+                  left: -30,
+                  bottom: 280,
                   child: Container(
                     width: 150,
                     height: 150,
