@@ -68,6 +68,7 @@ class _MainPageState extends State<MainPage> {
               maxWidth: 450, maxHeight: 900, minHeight: 550),
           child: PageView(
             controller: pageController,
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               CardBody(
                 child: FirstCard(
