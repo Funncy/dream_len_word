@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:lent_word_card/components/buttons.dart';
 
 class WordCard extends StatelessWidget {
@@ -20,7 +21,7 @@ class WordCard extends StatelessWidget {
             width: 320,
             child: Image.network(path),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Buttons(path: path, initCallback: initCallback)

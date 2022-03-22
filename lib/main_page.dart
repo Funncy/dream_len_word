@@ -1,4 +1,4 @@
-import 'package:firebase_analytics_web/firebase_analytics_web.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:lent_word_card/components/fifth_card.dart';
 import 'package:lent_word_card/components/forth_card.dart';
@@ -18,7 +18,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final FirebaseAnalyticsWeb analytics = FirebaseAnalyticsWeb();
   final PageController pageController = PageController(
     initialPage: 0,
   );
@@ -47,10 +46,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   void sendAnalytics(String title, String answer) {
-    analytics.logEvent(
-      name: title + answer,
-      parameters: {"answer": answer},
-    );
+    FirebaseAnalytics.instance.logEvent(name: title + answer);
   }
 
   void senFinalAnalytics() {
@@ -58,8 +54,8 @@ class _MainPageState extends State<MainPage> {
     String seconds = secondsChoose == 0 ? 'Y' : 'N';
     String third = thirdChoose == 0 ? 'Y' : 'N';
     String forth = forthChoose == 0 ? 'Y' : 'N';
-    analytics.logEvent(
-      name: "answer = $first$seconds$third$forth",
+    FirebaseAnalytics.instance.logEvent(
+      name: "결과 = $first$seconds$third$forth",
     );
   }
 
