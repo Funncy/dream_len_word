@@ -19,10 +19,17 @@ class WordCard extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Container(
+          SizedBox(
             width: 320,
             height: 500,
-            child: Image.network(path),
+            child: Image.network(path,
+                loadingBuilder: (_, child, loadingProgress) {
+              if (loadingProgress == null) return child;
+
+              return const Center(
+                child: Text("잠시만 기다려주세요..."),
+              );
+            }),
           ),
           const SizedBox(
             height: 20,
