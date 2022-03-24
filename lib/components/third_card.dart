@@ -55,6 +55,7 @@ class ThirdCard extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: "SCDream4",
                         fontSize: 12,
+                        fontWeight: FontWeight.w600,
                         color: MainColor,
                       ),
                     ),
@@ -78,6 +79,7 @@ class ThirdCard extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: "SCDream4",
                         fontSize: 12,
+                        fontWeight: FontWeight.w600,
                         color: MainColor,
                       ),
                     ),

@@ -13,7 +13,11 @@ class FirstCard extends StatelessWidget {
         const SizedBox(height: 50),
         const Text(
           "WITH CHRIST",
-          style: TextStyle(fontFamily: "CK", fontSize: 20, color: MainColor),
+          style: TextStyle(
+              fontFamily: "CK",
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
+              color: MainColor),
         ),
         const SizedBox(height: 10),
         const Text(
@@ -29,13 +33,19 @@ class FirstCard extends StatelessWidget {
         ),
         const Text(
           "사순절 기간 우리 마음에 주시는",
-          style:
-              TextStyle(fontFamily: "SCDream4", fontSize: 15, color: MainColor),
+          style: TextStyle(
+              fontFamily: "SCDream4",
+              fontWeight: FontWeight.w600,
+              fontSize: 15,
+              color: MainColor),
         ),
         const Text(
           "예수님의 음성을 들어보세요!",
-          style:
-              TextStyle(fontFamily: "SCDream4", fontSize: 15, color: MainColor),
+          style: TextStyle(
+              fontFamily: "SCDream4",
+              fontWeight: FontWeight.w600,
+              fontSize: 15,
+              color: MainColor),
         ),
         const SizedBox(
           height: 30,
@@ -43,8 +53,8 @@ class FirstCard extends StatelessWidget {
         InkWell(
           onTap: () => callback(),
           child: Container(
-            width: 100,
-            height: 40,
+            width: 90,
+            height: 45,
             decoration: BoxDecoration(
               border: Border.all(
                 width: 2,
@@ -57,6 +67,7 @@ class FirstCard extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: "SCDream4",
                   fontSize: 16,
+                  fontWeight: FontWeight.w600,
                   color: MainColor,
                 ),
               ),

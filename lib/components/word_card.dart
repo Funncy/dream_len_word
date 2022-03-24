@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:lent_word_card/components/buttons.dart';
 
 class WordCard extends StatelessWidget {

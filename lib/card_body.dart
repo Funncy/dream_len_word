@@ -17,9 +17,8 @@ class CardBody extends StatelessWidget {
             height: size.height,
             child: Stack(
               children: [
-                Positioned(
-                  left: 0,
-                  bottom: 150,
+                Align(
+                  alignment: Alignment.centerLeft,
                   child: Container(
                     width: 300,
                     height: 400,
@@ -50,18 +49,32 @@ class CardBody extends StatelessWidget {
                     child: child,
                   ),
                 ),
-                Positioned(
-                  left: -30,
-                  bottom: 280,
-                  child: Container(
-                    width: 150,
-                    height: 150,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image:
-                                NetworkImage('assets/img/background02.png'))),
+                if (size.width <= 410)
+                  Positioned(
+                    left: -30,
+                    top: 280,
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image:
+                                  NetworkImage('assets/img/background02.png'))),
+                    ),
                   ),
-                ),
+                if (size.width > 410)
+                  Positioned(
+                    left: 0,
+                    top: 280,
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image:
+                                  NetworkImage('assets/img/background02.png'))),
+                    ),
+                  ),
               ],
             ),
           ),

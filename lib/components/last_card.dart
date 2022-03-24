@@ -57,6 +57,7 @@ class LastCard extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: "SCDream4",
                   fontSize: 12,
+                  fontWeight: FontWeight.w600,
                   color: MainColor,
                 ),
               ),
