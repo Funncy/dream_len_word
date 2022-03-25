@@ -75,6 +75,21 @@ class CardBody extends StatelessWidget {
                                   NetworkImage('assets/img/background02.png'))),
                     ),
                   ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: Container(
+                      width: 70,
+                      height: 40,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image:
+                                  NetworkImage('assets/img/dream_logo.png'))),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

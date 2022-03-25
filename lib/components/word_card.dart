@@ -34,7 +34,21 @@ class WordCard extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Buttons(path: path, initCallback: initCallback)
+          Buttons(path: path, initCallback: initCallback),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Container(
+                width: 70,
+                height: 40,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage('assets/img/dream_logo.png'))),
+              ),
+            ),
+          ),
         ],
       ),
     )));
