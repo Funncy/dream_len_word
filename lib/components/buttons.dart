@@ -78,7 +78,7 @@ class _ButtonsState extends State<Buttons> {
         Container(
           margin: const EdgeInsets.only(top: 20),
           child: Button(
-            text: "말씀 다시 뽑기",
+            text: "말씀 다시 받기",
             onPressed: () {
               widget.initCallback();
             },
